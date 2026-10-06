@@ -1,0 +1,79 @@
+# REYI canonical URL rules — 2026-07-24 approved scope.
+# Exact path aliases redirect directly to the final HTTPS bare-domain URL.
+
+# Confirmed legacy company and list pages.
+/contact.html https://reyi.hk/contact/ 301
+/insights.html https://reyi.hk/insights/ 301
+/projects.html https://reyi.hk/projects/ 301
+/what-we-do.html https://reyi.hk/what-we-do/ 301
+
+# Confirmed legacy Project pages and their Cloudflare clean-URL aliases.
+/project-midea https://reyi.hk/projects/midea-experience-store/ 301
+/project-midea.html https://reyi.hk/projects/midea-experience-store/ 301
+/project-samsung-mobile https://reyi.hk/projects/samsung-mobile-store/ 301
+/project-samsung-mobile.html https://reyi.hk/projects/samsung-mobile-store/ 301
+/project-samsung-tv https://reyi.hk/projects/samsung-vision-store/ 301
+/project-samsung-tv.html https://reyi.hk/projects/samsung-vision-store/ 301
+/project-siemens https://reyi.hk/projects/siemens-full-store/ 301
+/project-siemens.html https://reyi.hk/projects/siemens-full-store/ 301
+/project-tcl https://reyi.hk/projects/tcl-experience-store/ 301
+/project-tcl.html https://reyi.hk/projects/tcl-experience-store/ 301
+/project-xiaomi https://reyi.hk/projects/xiaomi-mobile-store/ 301
+/project-xiaomi.html https://reyi.hk/projects/xiaomi-mobile-store/ 301
+
+# Confirmed legacy Product pages and their Cloudflare clean-URL aliases.
+/detail-samsung-table https://reyi.hk/products/samsung-mobile-experience-table/ 301
+/detail-samsung-table.html https://reyi.hk/products/samsung-mobile-experience-table/ 301
+/product-bosch-refrigerator-display-cabinet https://reyi.hk/products/bosch-refrigerator-display-cabinet/ 301
+/product-bosch-refrigerator-display-cabinet/ https://reyi.hk/products/bosch-refrigerator-display-cabinet/ 301
+/product-bosch-refrigerator-display-cabinet.html https://reyi.hk/products/bosch-refrigerator-display-cabinet/ 301
+/product-samsung-mobile-experience-table https://reyi.hk/products/samsung-mobile-experience-table/ 301
+/product-samsung-mobile-experience-table/ https://reyi.hk/products/samsung-mobile-experience-table/ 301
+/product-samsung-mobile-experience-table.html https://reyi.hk/products/samsung-mobile-experience-table/ 301
+/product-samsung-vision-ai-flagship-display https://reyi.hk/products/samsung-vision-ai-flagship-display/ 301
+/product-samsung-vision-ai-flagship-display/ https://reyi.hk/products/samsung-vision-ai-flagship-display/ 301
+/product-samsung-vision-ai-flagship-display.html https://reyi.hk/products/samsung-vision-ai-flagship-display/ 301
+
+# Insight detail URLs: approved extensionless canonical form.
+/insight-demo-props-modern-retail-displays.html https://reyi.hk/insight-demo-props-modern-retail-displays 301
+/insight-display-tables-product-comparison.html https://reyi.hk/insight-display-tables-product-comparison 301
+/insight-home-appliance-lifestyle-experience.html https://reyi.hk/insight-home-appliance-lifestyle-experience 301
+/insight-signage-lightboxes-brand-recognition.html https://reyi.hk/insight-signage-lightboxes-brand-recognition 301
+/insight-tv-audio-visual-experience-design.html https://reyi.hk/insight-tv-audio-visual-experience-design 301
+/insight-whole-store-display-systems.html https://reyi.hk/insight-whole-store-display-systems 301
+
+# Formal directory URLs: normalize the no-trailing-slash alias in one hop.
+/what-we-do https://reyi.hk/what-we-do/ 301
+/projects https://reyi.hk/projects/ 301
+/projects/midea-experience-store https://reyi.hk/projects/midea-experience-store/ 301
+/projects/samsung-mobile-store https://reyi.hk/projects/samsung-mobile-store/ 301
+/projects/samsung-vision-store https://reyi.hk/projects/samsung-vision-store/ 301
+/projects/siemens-full-store https://reyi.hk/projects/siemens-full-store/ 301
+/projects/tcl-experience-store https://reyi.hk/projects/tcl-experience-store/ 301
+/projects/xiaomi-mobile-store https://reyi.hk/projects/xiaomi-mobile-store/ 301
+/products https://reyi.hk/products/ 301
+/products/bosch-refrigerator-demo-display https://reyi.hk/products/bosch-refrigerator-demo-display/ 301
+/products/bosch-refrigerator-display-cabinet https://reyi.hk/products/bosch-refrigerator-display-cabinet/ 301
+/products/colmo-laundry-appliance-island-display https://reyi.hk/products/colmo-laundry-appliance-island-display/ 301
+/products/colmo-refrigerator-display-wall https://reyi.hk/products/colmo-refrigerator-display-wall/ 301
+/products/dreame-water-flow-demonstration-display https://reyi.hk/products/dreame-water-flow-demonstration-display/ 301
+/products/little-swan-washer-display-platform https://reyi.hk/products/little-swan-washer-display-platform/ 301
+/products/midea-cassette-air-conditioner-display https://reyi.hk/products/midea-cassette-air-conditioner-display/ 301
+/products/midea-laundry-care-experience-wall https://reyi.hk/products/midea-laundry-care-experience-wall/ 301
+/products/midea-prime-guard-lightbox https://reyi.hk/products/midea-prime-guard-lightbox/ 301
+/products/panasonic-alpha-interactive-demo-display https://reyi.hk/products/panasonic-alpha-interactive-demo-display/ 301
+/products/rota-hvac-transparent-demo-display https://reyi.hk/products/rota-hvac-transparent-demo-display/ 301
+/products/samsung-bespoke-ai-washer-display https://reyi.hk/products/samsung-bespoke-ai-washer-display/ 301
+/products/samsung-mobile-experience-table https://reyi.hk/products/samsung-mobile-experience-table/ 301
+/products/samsung-vision-ai-flagship-display https://reyi.hk/products/samsung-vision-ai-flagship-display/ 301
+/products/tcl-airflow-demonstration-display https://reyi.hk/products/tcl-airflow-demonstration-display/ 301
+/products/tcl-tv-display-system https://reyi.hk/products/tcl-tv-display-system/ 301
+/insights https://reyi.hk/insights/ 301
+/contact https://reyi.hk/contact/ 301
+/rfq https://reyi.hk/contact/ 301
+/rfq/ https://reyi.hk/contact/ 301
+
+# Host and protocol normalization. Keep these last so aliases resolve directly.
+http://www.reyi.hk/* https://reyi.hk/:splat 301
+https://www.reyi.hk/* https://reyi.hk/:splat 301
+http://reyi.hk/* https://reyi.hk/:splat 301

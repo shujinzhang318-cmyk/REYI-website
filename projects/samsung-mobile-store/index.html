@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PC9PLTSZ');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Samsung Mobile Experience Store Project | REYI</title>
+<meta content="Explore REYI's 2024 Samsung Mobile experience store project in Guangzhou, featuring smartphone display tables, Galaxy brand zones, digital content, accessories and hands-on device interaction." name="description"/>
+<link href="https://reyi.hk/projects/samsung-mobile-store/" rel="canonical"/>
+<style>
+:root{
+  --red:#c9152d;
+  --text:#111;
+  --muted:#5f6670;
+  --line:#e6e7eb;
+  --soft:#f7f7f5;
+  --side:128px;
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  padding:0;
+  background:#fff;
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%}
+
+.site-header{
+  height:104px;
+  border-bottom:1px solid var(--line);
+  background:#fff;
+}
+.nav-inner{
+  width:calc(100vw - (var(--side) * 2));
+  height:104px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  color:var(--red);
+  font-size:44px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.04em;
+}
+.nav{
+  display:flex;
+  align-items:center;
+  gap:42px;
+  height:100%;
+  font-size:18px;
+  font-weight:500;
+}
+.nav a{
+  position:relative;
+  height:100%;
+  display:flex;
+  align-items:center;
+  white-space:nowrap;
+}
+.nav a.active::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  width:56px;
+  height:4px;
+  border-radius:999px;
+  transform:translateX(-50%);
+  background:#111;
+}
+
+.page{
+  width:calc(100vw - (var(--side) * 2));
+  margin:0 auto;
+}
+.article-head{
+  padding:64px 0 42px;
+  max-width:980px;
+}
+.category{
+  margin:0 0 22px;
+  color:#6b7280;
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+h1{
+  margin:0;
+  max-width:920px;
+  font-size:76px;
+  line-height:.98;
+  letter-spacing:-.06em;
+  font-weight:660;
+}
+.intro{
+  margin:36px 0 0;
+  max-width:850px;
+  color:var(--muted);
+  font-size:26px;
+  line-height:1.45;
+  letter-spacing:-.02em;
+}
+.meta{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:30px;
+  color:#5f6670;
+  font-size:15px;
+}
+
+.hero-image{
+  width:100%;
+  height:620px;
+  border-radius:10px;
+  overflow:hidden;
+  background:#f2f2f2;
+  margin:0 0 76px;
+}
+.hero-image img{
+  object-fit:cover;
+  object-position:center center;
+}
+
+.article-layout{
+  display:grid;
+  grid-template-columns:minmax(0,820px) 1fr;
+  gap:90px;
+  align-items:start;
+}
+.article-body{
+  max-width:820px;
+}
+.article-body h2{
+  margin:0 0 22px;
+  font-size:38px;
+  line-height:1.08;
+  letter-spacing:-.04em;
+  font-weight:650;
+}
+.article-body p{
+  margin:0 0 26px;
+  color:#3f4650;
+  font-size:20px;
+  line-height:1.68;
+  letter-spacing:-.012em;
+}
+.article-body section{
+  margin-bottom:58px;
+}
+
+.wide-image{
+  height:420px;
+  border-radius:10px;
+  overflow:hidden;
+  background:#f2f2f2;
+  margin:10px 0 64px;
+}
+.wide-image img{
+  object-fit:cover;
+  object-position:center center;
+}
+
+.two-image-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:26px;
+  margin:10px 0 64px;
+}
+.half-image{
+  height:360px;
+  border-radius:10px;
+  overflow:hidden;
+  background:#f2f2f2;
+}
+.half-image img{
+  object-fit:cover;
+  object-position:center center;
+}
+
+.takeaways{
+  margin:8px 0 70px;
+  padding:34px 36px;
+  border-radius:10px;
+  background:var(--soft);
+}
+.takeaways h2{
+  margin-bottom:24px;
+}
+.takeaways ul{
+  margin:0;
+  padding-left:22px;
+  color:#3f4650;
+  font-size:20px;
+  line-height:1.62;
+}
+.takeaways li+li{
+  margin-top:12px;
+}
+
+.side-note{
+  position:sticky;
+  top:130px;
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#fff;
+}
+.side-note h3{
+  margin:0 0 16px;
+  font-size:22px;
+  line-height:1.12;
+  letter-spacing:-.03em;
+}
+.side-note p{
+  margin:0 0 22px;
+  color:#5f6670;
+  font-size:16px;
+  line-height:1.55;
+}
+.info-list{
+  display:grid;
+  gap:16px;
+  margin:0 0 24px;
+  padding:0;
+  list-style:none;
+}
+.info-list li{
+  display:grid;
+  gap:5px;
+  color:#5f6670;
+  font-size:15px;
+  line-height:1.35;
+}
+.info-list strong{
+  color:#111;
+  font-size:15px;
+}
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:0 20px;
+  border-radius:4px;
+  background:#050505;
+  color:#fff;
+  font-size:15px;
+  font-weight:650;
+  line-height:1;
+}
+
+.related{
+  padding:20px 0 74px;
+}
+.related h2{
+  margin:0 0 26px;
+  font-size:42px;
+  line-height:1.05;
+  letter-spacing:-.04em;
+  font-weight:630;
+}
+.related-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:26px;
+}
+.related-card{
+  border:1px solid #dde1e6;
+  border-radius:9px;
+  overflow:hidden;
+  background:#fff;
+}
+.related-img{
+  display:block;
+  width:100%;
+  aspect-ratio:2.12 / 1;
+  overflow:hidden;
+  background:#f1f1f1;
+}
+.related-img img{
+  object-fit:cover;
+  object-position:center center;
+}
+.related-card-body{
+  padding:24px 24px 28px;
+}
+.related-card h3{
+  margin:0 0 14px;
+  font-size:25px;
+  line-height:1.08;
+  letter-spacing:-.035em;
+  font-weight:650;
+}
+.related-card p{
+  margin:0 0 22px;
+  color:#59606a;
+  font-size:17px;
+  line-height:1.5;
+}
+
+.cta{
+  width:calc(100vw - (var(--side) * 2));
+  margin:0 auto 50px;
+  padding:46px 44px;
+  border-radius:6px;
+  background:linear-gradient(105deg,#f7f7f5,#fbfbfb);
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:26px;
+  align-items:start;
+}
+.cta h2{
+  margin:0 0 20px;
+  font-size:34px;
+  line-height:1.05;
+  letter-spacing:-.035em;
+  font-weight:600;
+}
+.cta p{
+  margin:0 0 30px;
+  max-width:610px;
+  color:#626975;
+  font-size:17px;
+  line-height:1.48;
+}
+.contact-side{
+  border-left:1px solid #d9dce1;
+  padding-left:44px;
+}
+.contact-block{
+  display:grid;
+  gap:34px;
+}
+.contact-row{
+  display:grid;
+  grid-template-columns:34px 1fr;
+  gap:26px;
+  align-items:start;
+}
+.contact-row+.contact-row{
+  padding-top:28px;
+  border-top:1px solid #d9dce1;
+}
+.icon{
+  width:26px;
+  height:26px;
+  stroke:#101010;
+  fill:none;
+  stroke-width:1.8;
+  margin-top:2px;
+}
+.label{
+  margin:0 0 9px;
+  color:#333;
+  font-size:15px;
+  line-height:1;
+}
+.value{
+  margin:0;
+  color:#111;
+  font-size:20px;
+  line-height:1.3;
+  font-weight:520;
+}
+.site-footer{
+  width:calc(100vw - (var(--side) * 2));
+  margin:0 auto;
+  padding:0 0 44px;
+  color:#5f6670;
+  font-size:17px;
+  line-height:1.4;
+}
+
+@media(max-width:1100px){
+  :root{--side:40px}
+  .article-layout{grid-template-columns:1fr;gap:36px}
+  .side-note{position:static}
+}
+@media(max-width:760px){
+  :root{--side:20px}
+  .site-header,.nav-inner{height:auto}
+  .nav-inner{padding:24px 0;display:block}
+  .logo{display:block;margin-bottom:20px;font-size:34px}
+  .nav{height:auto;flex-wrap:wrap;justify-content:flex-start;gap:18px;font-size:15px}
+  .nav a{height:auto;padding-bottom:12px}
+  .nav a.active::after{height:2px;width:32px}
+  .article-head{padding:42px 0 30px}
+  h1{font-size:44px}
+  .intro{font-size:20px}
+  .hero-image{height:auto;aspect-ratio:1.62/1;margin-bottom:48px}
+  .article-body h2{font-size:30px}
+  .article-body p,.takeaways ul{font-size:18px}
+  .wide-image{height:auto;aspect-ratio:2/1}
+  .two-image-grid,.related-grid,.cta{grid-template-columns:1fr}
+  .half-image{height:auto;aspect-ratio:1.4/1}
+  .cta{gap:32px;padding:34px 28px}
+  .contact-side{border-left:0;padding-left:0}
+}
+
+.project-summary {
+  margin: 0 0 70px;
+  padding: 34px 36px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 26px;
+}
+.summary-item {
+  border-left: 1px solid #d9dce1;
+  padding-left: 22px;
+}
+.summary-item:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+.summary-label {
+  margin: 0 0 8px;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.summary-value {
+  margin: 0;
+  color: #111;
+  font-size: 18px;
+  line-height: 1.38;
+  font-weight: 560;
+}
+.rfq-box {
+  margin: 8px 0 70px;
+  padding: 34px 36px;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+}
+.rfq-box h2 {
+  color: #fff;
+}
+.rfq-box p {
+  color: rgba(255,255,255,.76);
+}
+.rfq-box ul {
+  margin: 0 0 28px;
+  padding-left: 22px;
+  color: rgba(255,255,255,.82);
+  font-size: 20px;
+  line-height: 1.62;
+}
+.rfq-box li + li {
+  margin-top: 10px;
+}
+.rfq-box .button {
+  background: #fff;
+  color: #111;
+}
+@media(max-width:1100px){
+  .project-summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .summary-item:nth-child(3){border-left:0;padding-left:0}
+}
+@media(max-width:760px){
+  .project-summary{grid-template-columns:1fr}
+  .summary-item{border-left:0;padding-left:0;border-top:1px solid #d9dce1;padding-top:18px}
+  .summary-item:first-child{border-top:0;padding-top:0}
+}
+
+
+.side-note .info-list {
+  margin-top: 24px;
+}
+.side-note .info-list li {
+  padding-top: 16px;
+  border-top: 1px solid #e6e7eb;
+}
+.side-note .info-list li:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Project",
+  "name": "Samsung Mobile Experience Store",
+  "description": "A 2024 mobile retail project in Guangzhou combining product trial tables, Galaxy brand presentation, digital content, accessories and connected-device experience.",
+  "about": [
+    "Samsung mobile store display",
+    "mobile retail fixtures",
+    "consumer electronics display fixtures",
+    "Galaxy experience wall",
+    "retail display rollout",
+    "store fixture manufacturing",
+    "shopping mall mobile store",
+    "inward-curved storefront",
+    "display-table rounded-corner design",
+    "product trial table"
+  ],
+  "provider": {
+    "@type": "Organization",
+    "name": "REYI Display Solutions"
+  },
+  "keywords": "Samsung mobile store display, inward-curved storefront, display tables with rounded corners, mobile retail fixtures, consumer electronics display fixtures, Galaxy experience wall, store fixture manufacturing, retail display rollout"
+}
+</script>
+<link rel="stylesheet" href="/activation.css"></head>
+<body><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC9PLTSZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header class="site-header">
+<div class="nav-inner">
+<a aria-label="REYI home" class="logo" href="../../index.html">REYI</a>
+<nav aria-label="Main navigation" class="nav">
+<a href="../../index.html">Home</a>
+<a class="active" href="../index.html">Projects</a>
+<a href="../../products/index.html">Products</a>
+<a class="nav-insights" href="/insights/">HOT LAB</a>
+<a href="/contact/?source=projects_samsung-mobile-store">Request a Quote</a>
+</nav>
+</div>
+</header>
+<main>
+<article class="page">
+<header class="article-head">
+<p class="category">SAMSUNG MOBILE · 2024</p>
+<h1>Samsung Mobile Experience Store</h1>
+<p class="intro">A mobile retail environment built around accessible product tables, clear comparison zones and coordinated brand presentation for smartphones, wearables, accessories and connected devices.</p>
+<div class="meta"><span>Project Year: 2024</span><span>Location: Guangzhou, China</span><span>Project Type: Mobile &amp; Consumer-Electronics Experience Store</span></div>
+</header>
+<div class="hero-image">
+<img alt="Samsung mobile experience store entrance in Guangzhou with illuminated Samsung and Galaxy signage" src="/assets/images/embedded/3635d2b01a2c3002ee81069a9720234cf7f7c68d5f8a052d48af6741d0aba7c8.jpg"/>
+</div>
+<section aria-label="Project summary" class="project-summary">
+<div class="summary-item">
+<p class="summary-label">Store Type</p>
+<p class="summary-value">Samsung mobile retail store · Tianhe CBD, Guangzhou</p>
+</div>
+<div class="summary-item">
+<p class="summary-label">Product Category</p>
+<p class="summary-value">Smartphones, wearables, accessories, TV, and connected ecosystem products</p>
+</div>
+<div class="summary-item">
+<p class="summary-label">Display Scope</p>
+<p class="summary-value">Storefront branding, central product tables, Galaxy wall, accessory displays, lighting, and signage</p>
+</div>
+<div class="summary-item">
+<p class="summary-label">Project Value</p>
+<p class="summary-value">A store journey where a cool black technology identity is softened by an inward-curved entrance and rounded-corner display tables, creating an open gesture that draws customers in from across the mall</p>
+</div>
+</section>
+<div class="article-layout">
+<div class="article-body">
+<section>
+<h2>An Open Storefront with Clear Brand Visibility</h2>
+<p>The storefront establishes the Samsung identity before a customer enters. Illuminated Samsung and Galaxy signage, hero digital content and an open view into the store make the brand and product focus easy to read from the surrounding retail environment.</p>
+<p>The entrance is not only a visual statement. It creates a clear starting point for the customer journey, showing that the space is more than a phone counter and inviting visitors into a wider mobile and connected-device experience.</p>
+</section>
+<section>
+<h2>A Clear Journey Through the Samsung Ecosystem</h2>
+<p>Inside the store, central display tables create the main hands-on interaction area. Customers can move from smartphones to wearables, accessories, digital content and connected-product zones without losing the overall store logic.</p>
+<p>Clear zoning helps customers compare devices while also understanding how individual products connect within a wider ecosystem. The store supports independent browsing, staff explanation and a more natural movement from product discovery to decision-making.</p>
+</section>
+<div class="wide-image">
+<img alt="Samsung mobile store interior with central display tables and Galaxy brand wall" src="/assets/images/embedded/f51fad81e3055a10abc5f7425be0c54571cf82f140cd674d52d2da0880e167e9.jpg"/>
+</div>
+<section>
+<h2>Display Tables Built for Trial, Comparison and Daily Use</h2>
+<p>A mobile display table needs to look clean while managing live devices, security holders, product labels, information cards, charging and data cables, repeated handling and daily cleaning. These details directly affect how comfortable customers feel when picking up a phone or comparing several models.</p>
+<p>Practical organisation also supports store staff. Clear device positions, controlled wiring and accessible information help maintain order, simplify product explanation and keep the display usable during busy retail hours.</p>
+</section>
+<div class="two-image-grid">
+<div class="half-image">
+<img alt="Samsung Galaxy digital wall and smartphone display zone inside the mobile experience store" src="/assets/images/embedded/fd7b583a7ad171349051001c95cbfdcb2fb2e004b301de671e51d8a742fa9570.jpg"/>
+</div>
+<div class="half-image">
+<img alt="Samsung mobile display table with smartphones, wearables, labels and security holders" src="/assets/images/embedded/df83a3574ac279a03f01c411ff551ba56bf4e30a161d996adfacd6e6109ec5d0.jpg"/>
+</div>
+</div>
+<section>
+<h2>A Coordinated Fixture System for Consistent Retail Experience</h2>
+<p>Storefront signage, Galaxy brand walls, digital-screen structures, product tables, accessory panels and island fixtures need to work as one system. Consistent proportions, details and brand communication allow different zones to feel connected without making the store repetitive.</p>
+<p>REYI supported the translation of the approved retail concept into coordinated, manufacturable display components. The project demonstrates how fixture development, engineering coordination and custom production can create a practical mobile-retail language that can be adapted to the confirmed store format and product mix.</p>
+</section>
+<div class="wide-image">
+<img alt="Samsung mobile experience store with product tables, brand walls and clear customer circulation" src="/assets/images/embedded/480e5dc8124e0eb4babc65e696c4f3a8afcf515d1114a02e713b401793a33c2d.jpg"/>
+</div>
+<div class="rfq-box">
+<h2>Planning a Similar Mobile Retail Project?</h2>
+<p>Share your store format, device categories, approximate dimensions, required quantity, destination market and any available drawings or reference images.</p>
+<a class="button" href="/contact/?source=projects_samsung-mobile-store">Discuss a Similar Project</a>
+</div>
+<div class="takeaways">
+<h2>What This Project Demonstrates</h2>
+<ul><li>Strong storefront visibility with Samsung and Galaxy brand communication</li><li>Accessible display tables for hands-on product trial and comparison</li><li>Clear movement through smartphones, wearables, accessories and connected-product zones</li><li>Practical details for security, labeling, cable management and daily maintenance</li><li>A coordinated fixture language that supports consistent mobile retail presentation</li></ul>
+</div>
+</div>
+<aside class="side-note">
+<h3>Project Snapshot</h3>
+<p>A Samsung mobile retail environment that connects open storefront visibility, hands-on device trial, product comparison and ecosystem storytelling within one coordinated fixture system.</p>
+<ul class="info-list"><li><strong>Project Focus</strong> Hands-on mobile and connected-device retail experience</li><li><strong>Display System</strong> Product trial tables, Galaxy brand walls, digital-content structures, accessory panels and experience zones</li><li><strong>Experience Goal</strong> Help customers touch, compare and understand devices while moving clearly through the wider Samsung ecosystem</li><li><strong>REYI Support</strong> Fixture development, engineering coordination, custom manufacturing and coordinated retail-display production</li></ul>
+<a class="button" href="/contact/?source=projects_samsung-mobile-store">Discuss a Similar Project</a>
+</aside>
+</div>
+</article>
+<section class="page related">
+<h2>Related Projects</h2>
+<div class="related-grid">
+<article class="related-card">
+<a class="related-img" href="../">
+<img alt="Samsung mobile store interior with Galaxy brand wall and product display tables" src="/assets/images/embedded/df83a3574ac279a03f01c411ff551ba56bf4e30a161d996adfacd6e6109ec5d0.jpg"/>
+</a>
+<div class="related-card-body">
+<h3><a href="../">View More Retail Display Projects</a></h3>
+<p>Explore appliance, mobile and consumer-electronics retail projects using coordinated fixtures, product zones and branded display systems.</p>
+<a class="button" href="../">Read More</a>
+</div>
+</article>
+<article class="related-card">
+<a class="related-img" href="../../products/samsung-mobile-experience-table/">
+<img alt="Samsung mobile experience table with smartphones, product labels and security holders" src="/assets/images/embedded/fd7b583a7ad171349051001c95cbfdcb2fb2e004b301de671e51d8a742fa9570.jpg"/>
+</a>
+<div class="related-card-body">
+<h3><a href="../../products/samsung-mobile-experience-table/">Samsung Mobile Experience Table</a></h3>
+<p>A closer look at a branded mobile display table designed for device presentation, cable management and practical customer interaction.</p>
+<a class="button" href="../../products/samsung-mobile-experience-table/">Read More</a>
+</div>
+</article>
+</div>
+</section>
+<section class="cta">
+<div>
+<h2>Create a Clearer Hands-On Device Experience</h2>
+<p>Share your store format, device categories, approximate dimensions, required quantity, destination market and any available drawings or reference images. REYI will review the brief and identify the next practical step for fixture development, prototyping or production.</p>
+<a class="button" href="/contact/?source=projects_samsung-mobile-store">Request a Quote</a>
+</div>
+<div class="contact-side">
+<div class="contact-block">
+<div class="contact-row">
+<svg aria-hidden="true" class="icon" viewbox="0 0 24 24"><rect height="14" rx="1.5" width="18" x="3" y="5"></rect><path d="M4 6l8 7 8-7"></path></svg>
+<div><p class="label">Email</p><p class="value"><a href="mailto:elva.display@gmail.com">elva.display@gmail.com</a></p></div>
+</div>
+<div class="contact-row">
+<svg aria-hidden="true" class="icon" viewbox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7l-3.7 1 1.1-3.5A8 8 0 1 1 20 11.5z"></path><path d="M9 8.7c.2 3 2.1 5.1 5.1 6 .5.1 1.3-.8 1.5-1.2"></path></svg>
+<div><p class="label">WhatsApp</p><p class="value"><a href="https://wa.me/8619574902207">+86 195 7490 2207</a></p></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">© REYI Display Solutions · Guangzhou, China</footer>
+</body>
+</html>

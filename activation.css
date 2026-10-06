@@ -1,0 +1,20 @@
+/* Scoped activation additions. Existing layout and color tokens remain authoritative. */
+a:focus-visible,button:focus-visible{outline:3px solid var(--red,#d71920);outline-offset:5px}
+[data-activation-card][hidden],[data-activation-featured][hidden],[data-activation-pagination][hidden]{display:none!important}
+.journey-step{position:relative}.journey-step h3 a::after{content:"";position:absolute;inset:0}.journey-step h3 a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}.journey-step:focus-within{outline:3px solid var(--red);outline-offset:4px}.journey-step:hover h3{color:var(--red)}
+.product-rfq-points li a{display:block;text-decoration:underline;text-underline-offset:3px}.product-rfq-points li a:hover{color:var(--red)}
+.home-products-filter{display:flex;flex-wrap:nowrap;gap:8px;margin:-36px 0 42px;padding:0;border:0;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:thin}.home-products-filter a{display:inline-flex;align-items:center;flex:0 0 auto;min-height:31px;padding:0 11px;border:1px solid #d7d7d2;border-radius:999px;background:#f7f7f4;color:#30322f;font-size:13px;font-weight:650;line-height:1;text-decoration:none;transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease}.home-products-filter a.active{background:#222;border-color:#222;color:#fff}.home-products-filter a:hover{background:#eeeeeb;border-color:#b9b9b3;color:#222}.home-products-filter a.active:hover{background:#333;border-color:#333;color:#fff}.home-products-list{scroll-margin-top:140px}.home-products-list [data-category].is-hidden{display:none}
+.home-page .home-hero .hero-inner{justify-content:center!important}
+.projects-filter-bar [role=button]{cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.activation-status{font-size:14px;color:var(--muted);margin-top:12px;margin-bottom:0}
+#products-list,#filtered-library{scroll-margin-top:140px}
+.hot-lab-home{display:flex;width:100%;aspect-ratio:1672/941;background:var(--red,#d71920);align-items:center;justify-content:center;color:#111;cursor:pointer;container-type:inline-size}
+.hot-lab-composition{width:53.5%;display:flex;flex-direction:column;align-items:center;padding-top:2.8%;white-space:nowrap;font-family:Arial,Helvetica,sans-serif}
+.hot-lab-title{display:flex;align-items:baseline;justify-content:center;gap:1.29cqw;font-size:12.34cqw;line-height:.94;letter-spacing:-.56cqw;font-weight:300}
+.hot-lab-title strong{font-family:"Arial Black",Arial,Helvetica,sans-serif;font-weight:1000;letter-spacing:-.69cqw}.hot-lab-title>span{font-weight:300}
+.hot-lab-expansion{display:block;width:max-content;color:#fff;font-size:5.738cqw;margin-left:.486cqw;line-height:1.1;letter-spacing:normal;word-spacing:normal;margin-top:1cqw;font-weight:300}.hot-lab-expansion b{font-weight:900}.hot-lab-expansion>span:first-child>b{position:relative;left:.06cqw}
+.hot-lab-divider{width:5.25cqw;height:2px;background:#fff;margin-top:2.2cqw;margin-bottom:2cqw}
+.hot-lab-tagline{font-size:2.93cqw;font-weight:400;letter-spacing:.3cqw;line-height:1.2}
+.hot-lab-home:focus-visible{outline:3px solid #fff;outline-offset:-8px;box-shadow:inset 0 0 0 4px #111}
+.journey-page .journey-content{max-width:900px}.journey-page .journey-content h2{font-size:clamp(28px,3.5vw,42px)}.journey-page .journey-content li{font-size:18px;line-height:1.65;margin-bottom:10px}.journey-page .journey-content a:not(.btn){text-decoration:underline;text-underline-offset:3px}.journey-page .journey-evidence{margin:32px 0}.journey-page .journey-evidence img{display:block;width:100%;max-height:480px;object-fit:cover}.journey-page .journey-evidence figcaption{font-size:15px;margin-top:10px}
+@media(max-width:600px){.home-products-filter{margin-top:-18px}.hot-lab-home{aspect-ratio:1.45}.hot-lab-composition{width:73%;padding-top:0}.hot-lab-title{font-size:16.8cqw;gap:1.7cqw}.hot-lab-expansion{font-size:7.92cqw;margin-left:.769cqw;margin-top:1.7cqw}.hot-lab-divider{width:7.15cqw;margin-top:3.4cqw;margin-bottom:3cqw}.hot-lab-tagline{font-size:3.95cqw;letter-spacing:.36cqw}}

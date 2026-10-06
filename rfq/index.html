@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PC9PLTSZ');</script>
+<!-- End Google Tag Manager --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Request a Quote | REYI</title><meta name="description" content="Request a manufacturing quote from REYI for retail display fixtures, store display systems, demo props and custom appliance or electronics display solutions."><link rel="canonical" href="https://reyi.hk/rfq/"><link rel="stylesheet" href="/styles.css?v=rfq-form-20260702"><link rel="stylesheet" href="/activation.css"></head><body class="contact-page rfq-site"><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC9PLTSZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><header class="nav"><div class="container nav-inner"><a class="logo text-logo" href="/">REYI</a><nav class="nav-links"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/products/">Products</a><a class="nav-insights" href="/insights/">HOT LAB</a><a href="/contact/" class="nav-rfq">Request a Quote</a></nav></div></header><main>
+<section class="hero container rfq-hero"><div><div class="eyebrow">RFQ</div><h1>Request a Manufacturing Quote</h1><p class="lead">Send your retail display project details. REYI will review the requirements and contact you within 24 hours.</p></div></section>
+<section class="section container rfq-section">
+  <div class="rfq-grid">
+    <div class="contact-card rfq-card">
+      <h2>RFQ Form</h2>
+      <form class="rfq-form" id="rfq-form" data-rfq-source="direct">
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Company<input name="company" autocomplete="organization" required></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <label>Country<input name="country" autocomplete="country-name" required></label>
+        <label>Project Type<select name="project_type" required><option value="">Select project type</option><option>Retail display fixtures</option><option>Whole-store display system</option><option>Demo props</option><option>Display cabinet</option><option>Custom product display</option></select></label>
+        <label>Message<textarea name="message" rows="5" placeholder="Product category, quantity, size, materials, timeline, reference images or target market" required></textarea></label>
+        <button class="btn" type="submit">Submit RFQ</button>
+      </form>
+      <p class="rfq-success" id="rfq-success" hidden>We will contact you within 24 hours</p>
+    </div>
+    <aside class="contact-card rfq-side">
+      <h2>Direct Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:elva.display@gmail.com">elva.display@gmail.com</a><br><strong>WhatsApp:</strong> <a href="https://wa.me/8619574902207">+86 195 7490 2207</a><br><strong>Location:</strong> Guangzhou, Guangdong, China</p>
+      <p>For faster quotation, include product category, quantity, country, reference images and expected delivery timeline.</p>
+      <div class="btn-row"><a class="btn secondary" href="mailto:elva.display@gmail.com" data-rfq-channel="email">Email RFQ</a><a class="btn" href="https://wa.me/8619574902207" data-rfq-channel="whatsapp">WhatsApp RFQ</a></div>
+    </aside>
+  </div>
+</section>
+</main><footer class="footer"><div class="container footer-rfq"><span>© REYI Display Solutions · Guangzhou, China</span><a class="btn" href="/contact/">Request a Quote</a></div></footer><script>
+const rfqParams = new URLSearchParams(window.location.search);
+function rfqSource(){
+  const raw = rfqParams.get("source") || document.referrer || "direct";
+  if (String(raw).includes("projects")) return "projects";
+  if (String(raw).includes("products")) return "products";
+  if (String(raw).includes("homepage")) return "homepage";
+  return "direct";
+}
+async function sendRfq(payload){
+  const response = await fetch("/api/rfq", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) throw new Error("RFQ submit failed");
+  return response.json();
+}
+document.getElementById("rfq-form").addEventListener("submit", async function(event){
+  event.preventDefault();
+  const submitButton = this.querySelector("button[type='submit']");
+  submitButton.disabled = true;
+  const payload = Object.fromEntries(new FormData(this).entries());
+  payload.source = rfqSource();
+  payload.source_detail = rfqParams.get("source") || "direct_rfq_form";
+  payload.channel = "form";
+  try {
+    await sendRfq(payload);
+    this.hidden = true;
+    document.getElementById("rfq-success").hidden = false;
+  } catch (error) {
+    submitButton.disabled = false;
+    alert("RFQ submit failed. Please email elva.display@gmail.com or try again.");
+  }
+});
+document.querySelectorAll("[data-rfq-channel]").forEach(function(link){
+  link.addEventListener("click", function(){
+    const channel = this.dataset.rfqChannel;
+    navigator.sendBeacon && navigator.sendBeacon("/api/rfq", new Blob([JSON.stringify({
+      channel: channel + "_click",
+      source: rfqSource(),
+      source_detail: channel + "_rfq_button",
+      message: channel + " inquiry intent",
+      project_type: "Direct inquiry",
+    })], { type: "application/json" }));
+  });
+});
+</script></body></html>

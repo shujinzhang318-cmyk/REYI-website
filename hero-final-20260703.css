@@ -1,0 +1,162 @@
+/* FINAL HERO REBUILD 2026-07-03 */
+body.home-page main > .hero.home-hero{
+  min-height:calc(100svh - 76px)!important;
+  padding:0!important;
+  overflow:visible!important;
+}
+body.home-page main > .hero.home-hero .hero-inner{
+  min-height:calc(100svh - 76px)!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:space-between!important;
+  padding-top:56px!important;
+  padding-bottom:40px!important;
+}
+body.home-page main > .hero.home-hero .hero-main{
+  width:100%!important;
+}
+body.home-page main > .hero.home-hero .hero-text{
+  max-width:1120px!important;
+  width:100%!important;
+  margin:0!important;
+  transform:none!important;
+  text-align:left!important;
+}
+body.home-page main > .hero.home-hero h1{
+  font-size:clamp(62px,5.4vw,74px)!important;
+  line-height:1.04!important;
+  font-weight:680!important;
+  letter-spacing:-.055em!important;
+  max-width:760px!important;
+  margin:0 0 18px!important;
+  padding:0!important;
+}
+body.home-page main > .hero.home-hero .lead{
+  font-size:22px!important;
+  line-height:1.38!important;
+  max-width:920px!important;
+  margin:0 0 24px!important;
+  color:#666!important;
+}
+body.home-page main > .hero.home-hero .hero-proof{
+  list-style:none!important;
+  max-width:780px!important;
+  margin:0 0 30px!important;
+  padding:0!important;
+  display:grid!important;
+  gap:4px!important;
+}
+body.home-page main > .hero.home-hero .hero-proof li{
+  color:#3f413b!important;
+  font-size:16px!important;
+  line-height:1.42!important;
+  margin:0!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  gap:12px!important;
+}
+body.home-page main > .hero.home-hero .hero-proof li::before{
+  content:""!important;
+  flex:0 0 14px!important;
+  width:14px!important;
+  height:2px!important;
+  margin-top:.7em!important;
+  background:var(--red,#d71920)!important;
+}
+body.home-page main > .hero.home-hero .btn-row{
+  margin:0 0 30px!important;
+  padding:0!important;
+  gap:14px!important;
+}
+body.home-page main > .hero.home-hero .btn-row .btn{
+  min-height:48px!important;
+  height:48px!important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+}
+body.home-page main > .hero.home-hero .hero-trust{
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  gap:10px 12px!important;
+  max-width:1120px!important;
+  margin:0!important;
+  padding:0!important;
+}
+body.home-page main > .hero.home-hero .hero-trust .client-logo{
+  flex:0 0 auto!important;
+  padding:9px 16px!important;
+  font-size:15px!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+}
+body.home-page main > .hero.home-hero .home-rfq-intro{
+  width:100%!important;
+  max-width:1120px!important;
+  background:#f8f8f6!important;
+  border-radius:16px!important;
+  padding:16px 20px!important;
+  margin:34px 0 0!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+body.home-page main > .hero.home-hero .rfq-intro-steps{
+  display:grid!important;
+  grid-template-columns:repeat(3,1fr)!important;
+  gap:32px!important;
+  align-items:start!important;
+}
+body.home-page main > .hero.home-hero .rfq-intro-steps > div{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+}
+body.home-page main > .hero.home-hero .rfq-intro-steps h3{
+  display:block!important;
+  font-size:15px!important;
+  line-height:1.2!important;
+  font-weight:650!important;
+  margin:0 0 6px!important;
+  color:#111!important;
+  letter-spacing:0!important;
+}
+body.home-page main > .hero.home-hero .rfq-intro-steps p{
+  display:block!important;
+  font-size:13.5px!important;
+  line-height:1.38!important;
+  color:#666!important;
+  max-width:280px!important;
+  margin:0!important;
+}
+
+@media(max-width:760px){
+  body.home-page main > .hero.home-hero{
+    min-height:auto!important;
+    height:auto!important;
+  }
+  body.home-page main > .hero.home-hero .hero-inner{
+    min-height:auto!important;
+    display:block!important;
+    padding-top:40px!important;
+    padding-bottom:40px!important;
+  }
+  body.home-page main > .hero.home-hero h1{
+    font-size:clamp(42px,12vw,56px)!important;
+    max-width:100%!important;
+  }
+  body.home-page main > .hero.home-hero .lead{
+    font-size:18px!important;
+  }
+  body.home-page main > .hero.home-hero .hero-trust{
+    flex-wrap:wrap!important;
+  }
+  body.home-page main > .hero.home-hero .home-rfq-intro{
+    padding:16px!important;
+    margin-top:30px!important;
+  }
+  body.home-page main > .hero.home-hero .rfq-intro-steps{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+  }
+}
