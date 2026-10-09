@@ -77,12 +77,83 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </main><footer class="footer"><div class="container footer-rfq"><span>© REYI Display Solutions · Guangzhou, China</span><a class="footer-contact-link" href="/contact/">Contact</a></div></footer><script>
 const rfqParams = new URLSearchParams(window.location.search);
+// Only known source labels may enter attribution; never forward arbitrary query text.
+const rfqSourcePaths = {
+  "products_nav_cta": "/products/",
+  "products_hero_cta": "/products/",
+  "products_final_cta": "/products/",
+  "projects_nav_cta": "/projects/",
+  "products_midea_prime_guard_lightbox": "/products/midea-prime-guard-lightbox/",
+  "customization": "/customization/",
+  "production_rollout": "/production-rollout/",
+  "prototype_development": "/prototype-development/",
+  "start_your_project": "/start-your-project/",
+  "products_angel-illuminated-countertop-display": "/products/angel-illuminated-countertop-display/",
+  "products_bosch-refrigerator-demo-display": "/products/bosch-refrigerator-demo-display/",
+  "products_bosch-refrigerator-display-cabinet": "/products/bosch-refrigerator-display-cabinet/",
+  "products_chiq-twin-fan-technology-demonstration-display": "/products/chiq-twin-fan-technology-demonstration-display/",
+  "products_colmo-ai-lighting-demonstration-panel": "/products/colmo-ai-lighting-demonstration-panel/",
+  "products_colmo-air-quality-demonstration-display": "/products/colmo-air-quality-demonstration-display/",
+  "products_colmo-home-technology-comparison-displays": "/products/colmo-home-technology-comparison-displays/",
+  "products_colmo-laundry-appliance-island-display": "/products/colmo-laundry-appliance-island-display/",
+  "products_colmo-refrigerator-display-wall": "/products/colmo-refrigerator-display-wall/",
+  "products_colmo-water-treatment-demonstration-kit": "/products/colmo-water-treatment-demonstration-kit/",
+  "products_dreame-water-flow-demonstration-display": "/products/dreame-water-flow-demonstration-display/",
+  "products_fresh-milk-multimedia-countertop-display": "/products/fresh-milk-multimedia-countertop-display/",
+  "products_hisense-all-dry-drainage-demonstration-unit": "/products/hisense-all-dry-drainage-demonstration-unit/",
+  "products_little-swan-washer-display-platform": "/products/little-swan-washer-display-platform/",
+  "products_midea-cassette-air-conditioner-display": "/products/midea-cassette-air-conditioner-display/",
+  "products_midea-hot-pot-grill-display-stand": "/products/midea-hot-pot-grill-display-stand/",
+  "products_midea-laundry-care-experience-wall": "/products/midea-laundry-care-experience-wall/",
+  "products_midea-prime-guard-lightbox": "/products/midea-prime-guard-lightbox/",
+  "products_panasonic-alpha-interactive-demo-display": "/products/panasonic-alpha-interactive-demo-display/",
+  "products_rota-hvac-transparent-demo-display": "/products/rota-hvac-transparent-demo-display/",
+  "products_samsung-bespoke-ai-washer-display": "/products/samsung-bespoke-ai-washer-display/",
+  "products_samsung-mobile-experience-table": "/products/samsung-mobile-experience-table/",
+  "products_samsung-vision-ai-flagship-display": "/products/samsung-vision-ai-flagship-display/",
+  "products_tcl-airflow-demonstration-display": "/products/tcl-airflow-demonstration-display/",
+  "products_tcl-tv-display-system": "/products/tcl-tv-display-system/",
+  "products_toilet-surface-pipe-comparison-display": "/products/toilet-surface-pipe-comparison-display/",
+  "projects_colmo-appliance-lifestyle-showroom": "/projects/colmo-appliance-lifestyle-showroom/",
+  "projects_midea-experience-store": "/projects/midea-experience-store/",
+  "projects_samsung-galaxy-mall-retail-pavilion": "/projects/samsung-galaxy-mall-retail-pavilion/",
+  "projects_samsung-mobile-store": "/projects/samsung-mobile-store/",
+  "projects_samsung-vision-store": "/projects/samsung-vision-store/",
+  "projects_siemens-full-store": "/projects/siemens-full-store/",
+  "projects_tcl-experience-store": "/projects/tcl-experience-store/",
+  "projects_xiaomi-mobile-store": "/projects/xiaomi-mobile-store/"
+};
+function rfqPathSource(pathname){
+  if (pathname === "/") return "homepage";
+  if (/^\/products\/?$/.test(pathname)) return "products";
+  if (/^\/products\/[^/]+\/?$/.test(pathname)) return "product_detail";
+  if (/^\/projects\/?$/.test(pathname)) return "projects";
+  if (/^\/projects\/[^/]+\/?$/.test(pathname)) return "project_detail";
+  if (/^\/insights(?:\/|$|\.html$)/.test(pathname) || /^\/insight-[^/]+\/?$/.test(pathname)) return "hot_lab";
+  return "internal_other";
+}
+function rfqAttribution(){
+  const explicit = (rfqParams.get("source") || "").trim().toLowerCase();
+  if (explicit) {
+    const pathname = Object.prototype.hasOwnProperty.call(rfqSourcePaths, explicit) ? rfqSourcePaths[explicit] : "";
+    if (pathname) return { source: rfqPathSource(pathname), source_detail: pathname };
+    const categories = ["homepage", "products", "product_detail", "projects", "project_detail", "hot_lab", "internal_other", "external_referral", "direct"];
+    // Unknown explicit labels still take priority, but their text is not recorded.
+    return { source: categories.includes(explicit) ? explicit : "internal_other", source_detail: "" };
+  }
+  if (!document.referrer) return { source: "direct", source_detail: "" };
+  try {
+    const referrer = new URL(document.referrer);
+    if (!["reyi.hk", "www.reyi.hk"].includes(referrer.hostname) || !["http:", "https:"].includes(referrer.protocol)) {
+      return { source: "external_referral", source_detail: "" };
+    }
+    return { source: rfqPathSource(referrer.pathname), source_detail: referrer.pathname };
+  } catch (error) {
+    return { source: "external_referral", source_detail: "" };
+  }
+}
 function rfqSource(){
-  const raw = rfqParams.get("source") || document.referrer || "direct";
-  if (String(raw).includes("projects")) return "projects";
-  if (String(raw).includes("products")) return "products";
-  if (String(raw).includes("homepage")) return "homepage";
-  return "direct";
+  return rfqAttribution().source;
 }
 async function sendRfq(payload){
   const response = await fetch("/api/rfq", {
@@ -108,6 +179,7 @@ rfqForm.addEventListener("change", function(event){
 rfqForm.addEventListener("submit", async function(event){
   event.preventDefault();
   const submitButton = this.querySelector("button[type='submit']");
+  if (submitButton.disabled || this.hidden) return;
   submitButton.disabled = true;
   const errorMessage = document.getElementById("rfq-error");
   errorMessage.hidden = true;
@@ -131,11 +203,24 @@ rfqForm.addEventListener("submit", async function(event){
       "Product / challenge: " + value("note")
     ].join("\n")
   };
-  payload.source = rfqSource();
-  payload.source_detail = rfqParams.get("source") || "direct_rfq_form";
+  const attribution = rfqAttribution();
+  payload.source = attribution.source;
+  payload.source_detail = attribution.source_detail;
   payload.channel = "form";
+  const preferredContact = value("preferred_contact").toLowerCase();
+  const contactMethod = ["email", "whatsapp", "wechat", "linkedin"].includes(preferredContact) ? preferredContact : "";
   try {
     await sendRfq(payload);
+    // sendRfq rejects non-OK responses; only a completed successful request is a lead.
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "generate_lead",
+      lead_source: attribution.source,
+      source_detail: attribution.source_detail,
+      ...(contactMethod ? { contact_method: contactMethod } : {}),
+      form_id: "rfq-form",
+      page_path: window.location.pathname
+    });
     this.hidden = true;
     const success = document.getElementById("rfq-success");
     success.hidden = false;
